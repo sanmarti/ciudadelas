@@ -1,110 +1,82 @@
-/* Estilo general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Georgia', serif;
+  background-color: #f4f1e7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #2f2f2f;
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
+  width: 80%;
+  text-align: center;
+  padding: 20px;
+  background: #d6c9b8;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #6a4e23;
-    text-transform: uppercase;
+  font-size: 2rem;
+  color: #4f2c1f;
 }
 
-p {
-    font-size: 1.2rem;
-    color: #333;
+.turn-info {
+  margin-bottom: 20px;
 }
 
-/* Estilos del temporizador */
-.timer {
-    font-size: 2.5rem;
-    color: #d32f2f;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
+.turn-info h3 {
+  font-size: 1.2rem;
+  color: #a26f39;
 }
 
-/* Estilos para la sección de turno */
-.player-turn {
-    font-size: 1.5rem;
-    color: #333;
-    margin-top: 20px;
+#timer {
+  font-size: 1.5rem;
+  color: red;
 }
 
-/* Estilos para el área de juego */
-#gameArea {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
-/* Botones */
-button {
-    background-color: #6a4e23;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.player {
+  width: 200px;
+  background-color: #f4f1e7;
+  border: 2px solid #a26f39;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px;
 }
 
-button:hover {
-    background-color: #8d6e63;
+.player h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
-/* Estilos de las cartas medievales */
-.card {
-    background-image: url('https://example.com/medieval-card.jpg'); /* Imagen de fondo para cartas medievales */
-    background-size: cover;
-    width: 120px;
-    height: 180px;
-    border-radius: 10px;
-    position: relative;
-    color: white;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.status {
+  font-size: 1.1rem;
+  color: #4f2c1f;
 }
 
-.card h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
+#game-log {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
-/* Ajustes para el responsive */
-@media (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
+#log {
+  list-style-type: none;
+  padding: 0;
+}
 
-    .card {
-        width: 100px;
-        height: 150px;
-    }
+#log li {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #4f2c1f;
 }

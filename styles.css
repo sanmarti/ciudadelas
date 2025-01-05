@@ -1,1 +1,110 @@
+/* Estilo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #6a4e23;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Estilos del temporizador */
+.timer {
+    font-size: 2.5rem;
+    color: #d32f2f;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilos para la sección de turno */
+.player-turn {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilos para el área de juego */
+#gameArea {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Botones */
+button {
+    background-color: #6a4e23;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8d6e63;
+}
+
+/* Estilos de las cartas medievales */
+.card {
+    background-image: url('https://example.com/medieval-card.jpg'); /* Imagen de fondo para cartas medievales */
+    background-size: cover;
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Ajustes para el responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .card {
+        width: 100px;
+        height: 150px;
+    }
+}

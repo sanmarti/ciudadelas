@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ciudadelas - Juego</title>
+  <title>Ciudadelas - Juego Contra IA</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,39 +16,45 @@
       <div id="turns-left">Tiempo restante: <span id="timer">30</span> segundos</div>
     </div>
 
+    <!-- Panel del Mazo de Cartas (boca abajo) -->
+    <div id="deck">
+      <h3>Mazo de Cartas</h3>
+      <div id="deck-card" class="card">
+        <!-- Representación de una carta boca abajo -->
+        <div class="card-back">Carta Boca Abajo</div>
+      </div>
+    </div>
+
     <!-- Panel de jugadores -->
     <div class="players">
       <div class="player" id="player-1">
         <h4>Jugador Humano</h4>
+        <div class="status">Esperando...</div>
+        <div class="cards" id="human-cards">
+          <h5>Cartas de Distrito:</h5>
+          <ul id="human-card-list">
+            <!-- Aquí se mostrarán las cartas de distrito del jugador humano -->
+          </ul>
+        </div>
         <div id="human-actions">
+          <p>Monedas de Oro: <span id="human-gold">0</span></p>
           <button onclick="collectResources()">Recolectar Recursos</button>
           <button onclick="buildDistrict()">Construir Distrito</button>
+          <button onclick="drawCard()">Robar Carta</button>
         </div>
       </div>
       <div class="player" id="player-2">
         <h4>Jugador IA 1</h4>
         <div class="status">Esperando...</div>
+        <div class="cards" id="ia-cards-1">
+          <h5>Cartas de Distrito:</h5>
+          <ul id="ia-card-list-1">
+            <!-- Aquí se mostrarán las cartas de distrito de la IA -->
+          </ul>
+        </div>
+        <p>Monedas de Oro: <span id="ia-1-gold">0</span></p>
       </div>
-      <div class="player" id="player-3">
-        <h4>Jugador IA 2</h4>
-        <div class="status">Esperando...</div>
-      </div>
-      <div class="player" id="player-4">
-        <h4>Jugador IA 3</h4>
-        <div class="status">Esperando...</div>
-      </div>
-      <div class="player" id="player-5">
-        <h4>Jugador IA 4</h4>
-        <div class="status">Esperando...</div>
-      </div>
-      <div class="player" id="player-6">
-        <h4>Jugador IA 5</h4>
-        <div class="status">Esperando...</div>
-      </div>
-      <div class="player" id="player-7">
-        <h4>Jugador IA 6</h4>
-        <div class="status">Esperando...</div>
-      </div>
+      <!-- Aquí agregaríamos los demás jugadores IA, todos tendrán la misma estructura -->
     </div>
 
     <div id="game-log">

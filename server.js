@@ -18,18 +18,25 @@ wss.on('connection', (ws) => {
     clients.push(ws);
 
     // Asignar un nombre de jugador
-    const playerName = `Jugador ${clients.length}`;
+    const playerName = `Jugador Humano`; // Aquí solo se conecta un jugador humano
     ws.send(JSON.stringify({ type: 'welcome', message: `Bienvenido, ${playerName}!` }));
 
-    // Crear un juego cuando haya suficientes jugadores
-    if (clients.length === 3) { // Aquí se puede ajustar la cantidad de jugadores
-        game = new Game(['Jugador 1', 'Jugador 2', 'Jugador 3']);
+    // Crear un juego con el jugador humano y dos IA
+    if (clients.length === 1) {
+        game = new Game(['Jugador Humano', 'Jugador IA 1', 'Jugador IA 2']);
         game.startGame();
     }
 
     ws.on('message', (message) => {
         console.log(`Mensaje recibido: ${message}`);
-        // Lógica para gestionar los mensajes de los jugadores
+        // Lógica para gestionar los mensajes del jugador humano
+        if (message === 'collectGold') {
+            game.collectResources('Jugador Humano');
+        }
+        if (message.startsWith('buildDistrict')) {
+            const districtName = message.split(' ')[1];
+            game.buildDistrict('Jugador Humano', districtName);
+        }
     });
 
     ws.on('close', () => {

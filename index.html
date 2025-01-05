@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciudadelas Online</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciudadelas - Juego</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Ciudadelas Online</h1>
-            <p>El tiempo por turno es de 30 segundos</p>
-        </header>
+  <div class="container">
+    <h1>Ciudadelas - Juego Contra IA</h1>
 
-        <div class="game">
-            <div id="timer" class="timer">30</div>
-            <div id="playerTurn" class="player-turn">Es tu turno</div>
-
-            <div id="gameArea">
-                <!-- Aquí se desplegarán las cartas y el contenido del juego -->
-            </div>
-
-            <div id="actions">
-                <button id="startButton">Empezar Juego</button>
-            </div>
-        </div>
+    <!-- Panel para mostrar el turno de cada jugador -->
+    <div class="turn-info">
+      <h3>Turno Actual: <span id="current-turn">Jugador Humano</span></h3>
+      <div id="turns-left">Tiempo restante: <span id="timer">30</span> segundos</div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Panel de jugadores -->
+    <div class="players">
+      <div class="player" id="player-1">
+        <h4>Jugador Humano</h4>
+        <div id="human-actions">
+          <button onclick="collectResources()">Recolectar Recursos</button>
+          <button onclick="buildDistrict()">Construir Distrito</button>
+        </div>
+      </div>
+      <div class="player" id="player-2">
+        <h4>Jugador IA 1</h4>
+        <div class="status">Esperando...</div>
+      </div>
+      <div class="player" id="player-3">
+        <h4>Jugador IA 2</h4>
+        <div class="status">Esperando...</div>
+      </div>
+      <div class="player" id="player-4">
+        <h4>Jugador IA 3</h4>
+        <div class="status">Esperando...</div>
+      </div>
+      <div class="player" id="player-5">
+        <h4>Jugador IA 4</h4>
+        <div class="status">Esperando...</div>
+      </div>
+      <div class="player" id="player-6">
+        <h4>Jugador IA 5</h4>
+        <div class="status">Esperando...</div>
+      </div>
+      <div class="player" id="player-7">
+        <h4>Jugador IA 6</h4>
+        <div class="status">Esperando...</div>
+      </div>
+    </div>
+
+    <div id="game-log">
+      <h3>Registro del Juego</h3>
+      <ul id="log">
+        <!-- Registro de eventos del juego -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
